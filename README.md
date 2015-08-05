@@ -14,14 +14,11 @@ This landing page back-end is built using just two components:
 * [Webhook](https://stamplay.com/docs/rest-api#user)
 * Slack
 
-
-## Requirements
+## Configuring the backend
 
 Go to [your account](http://editor.stamplay.com/apps) and create a new app.
 
-## Configuring the components
-
-### Webhook
+#### Webhook
 Webhook component let you create API endpoints to receive data. We'll use this to capture users' email addresses. Creating a new endpoint using Webhook module is super simple:
 
 * Go to Task -> Components and click on "Webhook"
