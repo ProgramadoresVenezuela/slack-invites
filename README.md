@@ -9,8 +9,7 @@ This app will let you build a landing page to invite users to your Slack organiz
 
 ## How it works
 
-Let's start building the app by logging into [your account](http://editor.stamplay.com/apps) and create a new app.
-Once the app has been initialized we need to add two modules.
+The app is composed by a landing page with a simple form and a back-end which collect the data from the form and uses Slack's APIs to send an invite. Let's start building the app by logging into [your account](http://editor.stamplay.com/apps) and create a new app. Once the app has been initialized we need to add two modules.
 
 #### Webhook
 Webhook component let you create API endpoints to receive data. We'll use this to capture users' email addresses that will be sent from the landing page. Creating a new endpoint using Webhook module is super simple:
@@ -60,6 +59,9 @@ Click “Continue” to get to Step 3 where you can use the values on the right 
 
 ![Task config 2](./images/task_config_2.png "Task config 2")
 
-You're now ready to go, start pointing your users to `https://yourappid.stamplayapp.com` and they will be able to singup to your Slack organization in a breeze.
+You're now ready to go, start pointing your users to `https://yourappid.stamplayapp.com` and they will be able to singup to your Slack organization in a breeze. As usual, for any questions drop an email to [giuliano.iacobelli@stamplay.com](mailto:giuliano.iacobelli@stamplay.com) or join our Slack organization here [https://slackinvites.stamplayapp.com](slackinvites.stamplayapp.com).
+
+Cheers,
+
 
 
