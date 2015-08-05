@@ -59,7 +59,7 @@ Click “Continue” to get to Step 3 where you can use the values on the right 
 
 ![Task config 2](./images/task_config_2.png "Task config 2")
 
-You're now ready to go, start pointing your users to `https://yourappid.stamplayapp.com` and they will be able to singup to your Slack organization in a breeze. As usual, for any questions drop an email to [giuliano.iacobelli@stamplay.com](mailto:giuliano.iacobelli@stamplay.com) or join our Slack organization here [https://slackinvites.stamplayapp.com](slackinvites.stamplayapp.com).
+You're now ready to go, start pointing your users to `https://yourappid.stamplayapp.com` and they will be able to singup to your Slack organization in a breeze. As usual, for any questions drop an email to [giuliano.iacobelli@stamplay.com](mailto:giuliano.iacobelli@stamplay.com) or join our Slack organization here [https://slackinvites.stamplayapp.com](https://slackinvites.stamplayapp.com).
 
 Cheers,
 
