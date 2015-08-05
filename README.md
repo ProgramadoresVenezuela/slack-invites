@@ -9,45 +9,58 @@ This app will let you build a landing page to invite users to your Slack organiz
 
 ## How it works
 
-This landing page back-end is built using just two components:
-
-* [Webhook](https://stamplay.com/docs/rest-api#user)
-* Slack
-
-## Configuring the backend
-
-Go to [your account](http://editor.stamplay.com/apps) and create a new app.
+Let's start building the app by logging into [your account](http://editor.stamplay.com/apps) and create a new app.
+Once the app has been initialized we need to add two modules.
 
 #### Webhook
-Webhook component let you create API endpoints to receive data. We'll use this to capture users' email addresses. Creating a new endpoint using Webhook module is super simple:
+Webhook component let you create API endpoints to receive data. We'll use this to capture users' email addresses that will be sent from the landing page. Creating a new endpoint using Webhook module is super simple:
 
 * Go to Task -> Components and click on "Webhook"
 * Type a name for the webhook URL, let's call it `"invites"` and hit Create
 
 ![Webhook config](./images/webhook_config.png "Webhook config")
 
+#### Connect Slack
+Now we need to enable Stamplay to connect with Slack. 
 
+* Go to Task -> Components and click on "Slack"
+* Click the connect button, a new tab will be open
+* Select the Slack organization that will be joined by your users and then click on "Authorize"
 
------------------------
-# Developing
+![Slack config](./images/slack_config.png "Slack config")
 
-First, clone this repository :
+Both components have been successfully activated, now let's make them work together. 
 
-    git clone git@github.com:Stamplay/slack-invites
-    
-Or download it as a zip file
-	
-	https://github.com/Stamplay/slack-invites/archive/master.zip 
+#### Developing the front-end
 
-After launching `bower install` you need to upload the frontend files in your app by using the [CLI tool](https://github.com/Stamplay/stamplay-cli):
+Clone this repository or download the front-end files as a [zip file](https://github.com/Stamplay/slack-invites/archive/master.zip ) and extract it into a new directory. In order to upload the front-end files you need to install the `stamplay-cli` package via NPM.
 
-```js
-cd your/path/to/slack-invites
-stamplay init
-/*
- * You'll be prompted to type the appId and API key of your Stamplay app
- */
-stamplay deploy
+* `npm install -g stamplay-cli`
+
+Now you can run `stamplay init` in your project directory, a stamplay.json file will be initialized. You’ll need your app’s APP ID and API KEY both of which can be found on your app's dashboard or in the **Hosting** view.
+
+#### Add AppId and WebhookId in the index.html
+
+Open up `index.html`. At the very end of the file edit the following lines, replacing the value of `stamplay_appid` and `stamplay_webhookid` with your informations:
+
+```html
+	<script>
+		var stamplay_appid = "STAMPLAY_APPID";
+		var stamplay_webhookid = "WEBHOOK_ID";
+	</script>
 ```
 
------------------------
+#### Uploading the front-end
+Simply run `stamplay deploy` in the project directory. When that’s complete you can see your app live at `http://yourappid.stamplayapp.com`. If you try to submit an email address it should work.
+
+#### Creating the task a slack invite whenever a new user submit the email
+Click on “Manage” under “Tasks” in the Stamplay left hand menu, then click “New Task”. We’re going to select: “When a Webhook-  catches a request, Slack – invite an user to a team”
+
+![Task config 1](./images/task_config_1.png "Task config 1")
+
+Click “Continue” to get to Step 3 where you can use the values on the right to populate your Slack invite request.
+
+![Task config 2](./images/task_config_2.png "Task config 2")
+
+
+
