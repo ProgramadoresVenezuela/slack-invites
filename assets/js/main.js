@@ -161,9 +161,10 @@ function getParameterByName(name) {
 			
             var webhook = new Stamplay.Webhook(stamplay_webhookid);
 
-            var regExp = new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$");
-						
-						if (regExp.test(email)) {
+            var regExp = new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$");						
+						var valid = regExp.test($email.value);
+
+						if (valid) {
 							var data = { email: $email.value }
 							webhook.post(data).then(function (response) {
 								$form.reset();
